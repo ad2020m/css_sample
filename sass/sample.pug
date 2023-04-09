@@ -3,14 +3,38 @@ html
         title 挨拶
         link(rel="stylesheet", href="css/sample.css")
     body 
-        main 
-            .content 
-                // 左側のコンテンツ
-                .leftContent 
-                    h2 Sass Tutorial 
-                // 右側のコンテンツ
-                .rightContent 
-                    p Lorem ipsum dolora molest!
-                    button And More 
+        .menubar
+            ul 
+                li.hasMenu: a(href="#") メニュー1
+                    .subMenu
+                        ul
+                            li: a(href="#") サブメニュー1-1
+                            li: a(href="#") サブメニュー1-2
+                            li: a(href="#") サブメニュー1-3
+                            li: a(href="#") サブメニュー1-4
+                li.hasMenu: a(href="#") メニュー2
+                    .subMenu
+                        ul
+                            li: a(href="#") サブメニュー2-1
+                            li: a(href="#") サブメニュー2-2
+                            li: a(href="#") サブメニュー2-3
+                            li: a(href="#") サブメニュー2-4
+                li.hasMenu: a(href="#") メニュー3
+                    .subMenu
+                        ul
+                            li: a(href="#") サブメニュー3-1
+                            li: a(href="#") サブメニュー3-2
+                            li: a(href="#") サブメニュー3-3
+                            li: a(href="#") サブメニュー3-4
+                li: a(href="#") メニュー4
+        
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+        script.
+            $(function(){
+            $(".hasMenu").on("click", function(){
+                $(this).siblings().removeClass("active");
+                $(this).toggleClass("active");
+            });
+            });
 
 

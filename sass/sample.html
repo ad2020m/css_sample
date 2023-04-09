@@ -5,18 +5,46 @@
     <link rel="stylesheet" href="css/sample.css"/>
   </head>
   <body> 
-    <main> 
-      <div class="content"> 
-        <!-- 左側のコンテンツ-->
-        <div class="leftContent"> 
-          <h2>Sass Tutorial </h2>
-        </div>
-        <!-- 右側のコンテンツ-->
-        <div class="rightContent"> 
-          <p>Lorem ipsum dolora molest!</p>
-          <button>And More </button>
-        </div>
-      </div>
-    </main>
+    <div class="menubar">
+      <ul> 
+        <li class="hasMenu"><a href="#">メニュー1
+            <div class="subMenu">
+              <ul>
+                <li><a href="#">サブメニュー1-1</a></li>
+                <li><a href="#">サブメニュー1-2</a></li>
+                <li><a href="#">サブメニュー1-3</a></li>
+                <li><a href="#">サブメニュー1-4</a></li>
+              </ul>
+            </div></a></li>
+        <li class="hasMenu"><a href="#">メニュー2
+            <div class="subMenu">
+              <ul>
+                <li><a href="#">サブメニュー2-1</a></li>
+                <li><a href="#">サブメニュー2-2</a></li>
+                <li><a href="#">サブメニュー2-3</a></li>
+                <li><a href="#">サブメニュー2-4</a></li>
+              </ul>
+            </div></a></li>
+        <li class="hasMenu"><a href="#">メニュー3
+            <div class="subMenu">
+              <ul>
+                <li><a href="#">サブメニュー3-1</a></li>
+                <li><a href="#">サブメニュー3-2</a></li>
+                <li><a href="#">サブメニュー3-3</a></li>
+                <li><a href="#">サブメニュー3-4</a></li>
+              </ul>
+            </div></a></li>
+        <li><a href="#">メニュー4</a></li>
+      </ul>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+      $(".hasMenu").on("click", function(){
+          $(this).siblings().removeClass("active");
+          $(this).toggleClass("active");
+      });
+      });
+    </script>
   </body>
 </html>

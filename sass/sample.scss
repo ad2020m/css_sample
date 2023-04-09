@@ -1,49 +1,63 @@
 $mainColor: #e89bcf;
 $leftContentColor: Orange;
 
-
-
 * {
     margin: 0;
     padding: 0;
+}
+ul, ol, li {
+    list-style: none;
 }
 
 body {
     width: 100%;
     height: 100vh;
-    overflow: hidden;
-    background-color: aqua;
+    background-image: url(https://placehold.jp/1500x1500.png);
+    background-size: cover;
+    background-position: center;
 }
-main {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $mainColor;
+.menubar {
+    background-color: #5599c7;
+    text-align: center;
 }
-.content {
-    display: flex;
-
-    .leftContent {
-        width: 650px;
-        height: 470px;
-        background-color: $leftContentColor;
-        border-radius: 5px;
-        margin-right: 20px;
-        position: relative;
-
-        h2 {
-            color: aqua;
-            position: absolute;
-            top: 40px;
-            right: 30px;
-            transition: 0.5s;
-
-            &:hover {
-                font-size: 65px;
-                color: #ff00ff;
-            }
-        }
-    }
+.menubar ul li {
+    display: inline-block;
+    width: 120px;
+    margin: 0 35px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    cursor: pointer;
+    transition: all 0.2s;
 }
+.menubar ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+.active,
+.menubar ul li:hover {
+    background-color: #6bbff6;
+}
+.subMenu {
+    position: absolute;
+    background-color: #5599c7;
+    margin-top: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: none;
+}
+.active .subMenu,
+.hasMenu:hover .subMenu {
+    display: block;
+}
+.active .subMenu ul li,
+.hasMenu:hover .subMenu ul li {
+    display: block;
+    width: 140px;
+    border-bottom: 1px dotted #fff;
+}
+.active .subMenu ul li:last-of-type,
+.hasMenu:hover .subMenu ul li:last-of-type {
+    border: none;
+}
+
